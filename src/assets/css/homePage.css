@@ -1,0 +1,64 @@
+.bg-splash-gray {
+    background-color: #f5f8fa;
+}
+.px3 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.py3 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.square-100 {
+    width: 100px;
+    height: 100px;
+}
+.bg-white {
+    background-color: #fff;
+}
+.circle {
+    border-radius: 50%;
+}
+.border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0,0,0,.125);
+}
+.p1 {
+    padding: .5rem;
+}
+
+.page-title{
+    color: #007199;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.mb1 {
+    margin-bottom: .5rem;
+}
+.mt0 {
+    margin-top: 0;
+}
+.mb2 {
+    margin-bottom: 1rem;
+}
+
+a:hover, a h1:hover, a h2:hover, a h3:hover, a h4:hover, a h5:hover, a h6:hover, .link-hover-color {
+    color: #007199;
+    text-decoration: none;
+}
+
+.contacts{
+    text-align: center;
+    margin-top: 5px;
+}
+.MuiSvgIcon-root{
+    width: 2em !important;
+}
