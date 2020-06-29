@@ -13,7 +13,7 @@ import Nav from 'react-bootstrap/Nav';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import BlogPage from './pages/BlogPage';
-import ContactPage from './pages/ContactPage';
+// import ContactPage from './pages/ContactPage';
 import EducationPage from './pages/EducationPage';
 import ExperiencePage from './pages/ExperiencePage';
 import FooterPage from './pages/FooterPage';
@@ -57,7 +57,7 @@ class App extends React.Component {
         ]
       }],
       headerLinks: [
-        { title: 'Home', path: '/' },
+        { title: 'Home', path: '/react-myportfolio' },
         { title: 'About', path: '/about' },
         { title: 'Education', path: '/education' },
         { title: 'Experience', path: '/experience' },
@@ -136,7 +136,7 @@ class App extends React.Component {
               <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
               <Navbar.Collapse id="navbar-toggle">
                 <Nav className="ml-auto">
-                  <Link className="nav-link" to="/">
+                  <Link className="nav-link" to="/react-myportfolio">
                     <Button variant="outlined" color="primary">Home</Button></Link>
                   <Link className="nav-link" to="/about">
                     <Button variant="outlined" color="inherit">About</Button></Link>
@@ -146,14 +146,14 @@ class App extends React.Component {
                     <Button variant="contained" color="secondary">Experience</Button></Link>
                   <Link className="nav-link" to="/blog">
                     <Button variant="outlined" color="secondary">Blog</Button></Link>
-                  <Link className="nav-link" to="/contact">
-                    <Button variant="outlined" color="primary">Contact</Button></Link>
+                  {/* <Link className="nav-link" to="/contact">
+                    <Button variant="outlined" color="primary">Contact</Button></Link> */}
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
             </div>
 
-            <Route path="/" exact render={() => <HomePage title={this.state.home.title}
+            <Route path="/react-myportfolio" exact render={() => <HomePage title={this.state.home.title}
               subTitle={this.state.home.subTitle} text={this.state.home.text}
               developerName={this.state.developerName} email={this.state.email}
               contactNo={this.state.contactNo}
@@ -170,7 +170,7 @@ class App extends React.Component {
                   title={this.state.experience.title}
                   joblist={this.state.expList} />} />
             <Route path="/blog" render={() => <BlogPage title={this.state.blog.title} />} />
-            <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} />
+            {/* <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} /> */}
           
         </Container>
         <FooterPage title={this.state.footerTitle} />
