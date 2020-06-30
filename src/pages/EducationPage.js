@@ -14,9 +14,9 @@ function EducationPage(props) {
                             <i className="icon-pen2 fa fa-pencil" aria-hidden="true"></i>
                         </div>
                         <div className="timeline-label">
-                            <h2>{edu.session}, {edu.degree}</h2>
-                            <h2>{edu.major}</h2>
-                            <h2>{edu.institute}</h2>
+                            <h2 className="bo1">{edu.degree} - {edu.session}</h2>
+                            <h2 className="it1">{edu.major}</h2>
+                            <h3 className="it1">{edu.institute}</h3>
                         </div>
                         </div>
                         </article>

@@ -1,7 +1,8 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 function AboutPage(props) {
-
+    const skills =  props.skills;  
     return(
         <div className="homepage">
         <div className="mainContent ">
@@ -14,6 +15,13 @@ function AboutPage(props) {
                     While i am proficient as a full-stack developer, my core expertise is about
                     implementing business logics using PL-SQL(Oracle).
                     </p>
+
+                <h4 className="skill">Skils</h4>
+                {skills && (
+                    skills.map((skill,index) =>  
+                    <Button variant="outlined" color="secondary" className="skillButton" key={index}>{skill}</Button>   
+                    )
+                )}   
 			</div>
 
         </div>

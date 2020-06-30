@@ -62,3 +62,10 @@ a:hover, a h1:hover, a h2:hover, a h3:hover, a h4:hover, a h5:hover, a h6:hover,
 .MuiSvgIcon-root{
     width: 2em !important;
 }
+
+.bo1{
+    font-weight: bold;
+}
+.it1{
+    font-style: italic;
+}

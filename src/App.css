@@ -46,6 +46,12 @@
   border-top: 2px solid tomato !important;
 }
 
+.home-page-title{
+  text-shadow: 3px 4px 6px blueviolet;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
 .mainContent {
   margin: 0 auto;
   max-width: 650px;
@@ -210,4 +216,19 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/*For About Page Css*/
+body {
+  padding:5px;
+  padding-bottom:60px;   /* Height of the footer */
+}
+
+.skill{
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.skillButton{
+  margin: 2px 5px !important;
 }

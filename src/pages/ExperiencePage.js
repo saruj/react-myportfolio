@@ -18,8 +18,8 @@ function  ExperiencePage(props) {
                         </div>
                         <div className="timeline-label">
                             <h2>{job.designation}</h2>
-                            <h3>{job.company}</h3>
-                            <h4>{job.tenor}</h4>
+                            <h3 className="bo1 it1">{job.company}</h3>
+                            <h4 className="bo1">{job.tenor}</h4>
                             
                             {job.jobResponsibility.map((text, index) => (
                                 <li key={index}>

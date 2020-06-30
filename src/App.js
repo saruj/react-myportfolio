@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 //import expService from './assets/jobExpList';
 //import logo from './logo.svg';
 import './App.css';
+import { createMuiTheme, withStyles,  ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { green, purple, lightBlue } from '@material-ui/core/colors';
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -18,6 +20,26 @@ import EducationPage from './pages/EducationPage';
 import ExperiencePage from './pages/ExperiencePage';
 import FooterPage from './pages/FooterPage';
 
+
+
+const ColorButton = withStyles((theme) => ({
+  root: {
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: purple[500],
+    '&:hover': {
+      backgroundColor: purple[700],
+    },
+  },
+}))(Button);
+
+const theme = createMuiTheme({
+  palette: {
+    btn1 : lightBlue,
+    btn2 : green
+  },
+});
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +47,9 @@ class App extends React.Component {
       title: 'Manabendra Saruj',
       developerName: "Manabendra Saruj",
       email: "msaruj@gmail.com",
+      skills:["Java","Spring", "Struts2", "Goovy On Grails", "Python","Oracle","Mysql","PostGreSql","Javascript"
+              ,"React","HTML","CSS","Bootstrap"],
+      toggleClass:"",
       contacts: [{
         "facebook": "https://www.facebook.com/manabendra.saruj"
         , "twiter": "#"
@@ -34,9 +59,20 @@ class App extends React.Component {
       }],
       contactNo: "01670-31**31",
       footerTitle: "msaruj@gmail.com",
-      expList: [{
-        "jobid": "1",
-        "company": "Brac It Services Ltd.",
+      expList: [
+        {
+          "jobid": "1",
+          "company": "Dutch-Bangla Bank Ltd.",
+          "designation": "Software Engineer(Senior Officer)",
+          "tenor": "14 July, 2016 - Present.",
+          "jobResponsibility": [" Implement business logic using pl-sql for  Mobile Financial Applications."
+            , " System design and implementaion to automate some inhouse projects like (Loan, Card, Centralized trade etc.)"
+            , " Design reports for those projects using BI Publisher(Oracle)"
+            , " Development Stack: Java(Strut2 Framework), Oracle(RDBMS), Reporting(BI Publisher), "
+          ]
+        },{
+        "jobid": "2",
+        "company": "BRAC IT Services Limited(biTS).",
         "designation": "Software Engineer",
         "tenor": "1 April, 2015 - 13 July, 2016",
         "jobResponsibility": [
@@ -44,18 +80,8 @@ class App extends React.Component {
           , "Worked in some other projects where main task is to develop a dashboard for the work flow. "
           , "Development Stack: Java & Groovy On grails, Postgres(RDBMS), Dashboard(Chart.js & Bootstrap),"
         ]
-      },
-      {
-        "jobid": "2",
-        "company": "Dutch-Bangla Bank Ltd.",
-        "designation": "Software Engineer(Senior Officer)",
-        "tenor": "14 July, 2016 - Present!!",
-        "jobResponsibility": [" Implement business logic using pl-sql for  Mobile Financial Applications."
-          , " System design and implementaion to automate some inhouse projects like (Loan, Card, Centralized trade etc.)"
-          , " Design reports for those projects using BI Publisher(Oracle)"
-          , " Development Stack: Java(Strut2 Framework), Oracle(RDBMS), Reporting(BI Publisher), "
-        ]
-      }],
+      }
+      ],
       headerLinks: [
         { title: 'Home', path: '/react-myportfolio' },
         { title: 'About', path: '/about' },
@@ -86,60 +112,53 @@ class App extends React.Component {
       },
       educationList: [
         {
-          "degree": "Masters in IT(Evening)"
+          "degree": "Masters in Information & Technology"
           , "session": "2020"
-          , "institute": "Dhaka University(Institute of Information Technology.)"
-          , "major": "Masters in Information & Technology"
+          , "institute": "Dhaka University"
+          , "major": "Institute of Information & Technology"
         },
         {
-          "degree": "B. Sc(Engg.)"
-          , "session": "2012"
+          "degree": "Bachelor Of Science(Engineering)"
+          , "session": "2015"
           , "institute": "University Of Chittagong"
-          , "major": "Computer Science & Engineering"
-        },
-        {
-          "degree": "H.S.C."
-          , "session": "2007"
-          , "institute": "Dulahazara College"
-          , "major": "Science"
-        },
-        {
-          "degree": "S.S.C."
-          , "session": "2005"
-          , "institute": "Memorial Khristian High School"
-          , "major": "Science"
+          , "major": "Department of Computer Science & Engineering"
         }
+        //,
+        // {
+        //   "degree": "H.S.C."
+        //   , "session": "2007"
+        //   , "institute": "Dulahazara College"
+        //   , "major": "Science"
+        // },
+        // {
+        //   "degree": "S.S.C."
+        //   , "session": "2005"
+        //   , "institute": "Memorial Khristian High School"
+        //   , "major": "Science"
+        // }
       ]
     };
   };
 
-
-  // getExpList = () => {
-  //   expService().then(company => {
-  //     this.setState({
-  //       expList : company
-  //     });
-  //   });
-  // };
-
-  // componentDidMount(){
-  //   this.getExpList();
-  // };
 
   render() {
     return (
       <Router>
         <Container className="p-0" fluid={true}>
           <div className="header">
-            <Navbar className="border-bottom" bg="transparent" expand="lg">
+            <Navbar  className="border-bottom" bg="transparent" expand="lg">
               <Navbar.Brand className="home-page-title">Manabendra Saruj</Navbar.Brand>
-              <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-              <Navbar.Collapse id="navbar-toggle">
+              <Navbar.Toggle  className="border-0" aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav" >
                 <Nav className="ml-auto">
-                  <Link className="nav-link" to="/react-myportfolio">
-                    <Button variant="outlined" color="primary">Home</Button></Link>
-                  <Link className="nav-link" to="/about">
-                    <Button variant="outlined" color="inherit">About</Button></Link>
+                  <Link className="nav-link" to="/react-myportfolio"  >
+                      <ThemeProvider theme={theme}> 
+                      <Button variant="outlined" color="btn2">Home</Button>
+                      </ThemeProvider>
+                  </Link>
+                  <Link className="nav-link" to="/about"  >
+                      <ColorButton variant="outlined" color="btn1">About</ColorButton>
+                  </Link>
                   <Link className="nav-link" to="/education">
                     <Button variant="contained" color="primary">Education</Button></Link>
                   <Link className="nav-link" to="/experience">
@@ -157,8 +176,9 @@ class App extends React.Component {
               subTitle={this.state.home.subTitle} text={this.state.home.text}
               developerName={this.state.developerName} email={this.state.email}
               contactNo={this.state.contactNo}
-              contacts={this.state.contacts} />} />
-            <Route path="/about" render={() => <AboutPage title={this.state.about.title} devName={this.state.developerName} />} />
+              contacts={this.state.contacts} 
+              />} />
+            <Route path="/about" render={() => <AboutPage title={this.state.about.title} skills={this.state.skills} devName={this.state.developerName} />} />
             <Route path="/education"
               render={() =>
                 <EducationPage
