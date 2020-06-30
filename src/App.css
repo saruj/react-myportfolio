@@ -37,12 +37,17 @@
   }
 }
 
+body {
+  padding-bottom:30px;   /* Height of the footer */
+}
+
 .header{
   /* background-color: lightgray; */
   background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(88, 121, 151));
 }
 
 .homepage{
+  padding:5px;
   border-top: 2px solid tomato !important;
 }
 
@@ -219,10 +224,7 @@
 }
 
 /*For About Page Css*/
-body {
-  padding:5px;
-  padding-bottom:60px;   /* Height of the footer */
-}
+
 
 .skill{
   margin-top: 15px;
